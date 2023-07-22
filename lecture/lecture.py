@@ -108,32 +108,98 @@
 # print(big(7))
 # print(small(3))
 ##################################################################################
-import time
+# import time
+# from typing import Callable
+#
+#
+# def main(func: Callable):
+#     def wrapper(*args, **kwargs):
+#         print(f'Запуск функции {func.__name__} в {time.time()}')
+#         result = func(*args, **kwargs)
+#         print(f'Результат функции {func.__name__}: {result}')
+#         print(f'Завершение функции {func.__name__} в return result {time.time()}')
+#     return wrapper
+#
+#
+# def factorial(n: int) -> int:
+#     f = 1
+#     for i in range(2, n + 1):
+#         f *= i
+#     return f
+#
+#
+# print(f'{factorial(1000) = }')
+# control = main(factorial)
+# print(f'{control.__name__ = }')
+# print(f'{control(1000) = }')
+##################################################################################
+# import time
+# from typing import Callable
+#
+#
+# def main(func: Callable):
+#     def wrapper(*args, **kwargs):
+#         print(f'Запуск функции {func.__name__} в {time.time()}')
+#         result = func(*args, **kwargs)
+#         print(f'Результат функции {func.__name__}: {result}')
+#         print(f'Завершение функции {func.__name__} в return result {time.time()}')
+#     return wrapper
+#
+#
+# @main
+# def factorial(n: int) -> int:
+#     f =1
+#     for i in range(2, n + 1):
+#         f *= i
+#     return f
+#
+#
+# print(f'{factorial(1000) = }')
+##################################################################################
 from typing import Callable
 
 
-def main(func: Callable):
-    def wrapper(*args, **kwargs):
-        print(f'Запуск функции {func.__name__} в {time.time()}')
-        result = func(*args, **kwargs)
-        print(f'Результат функции {func.__name__}: {result}')
-        print(f'Завершение функции {func.__name__} в return result {time.time()}')
-    return wrapper
+def deco_a(func: Callable):
+    def wrapper_a(*args, **kwargs):
+        print('Старт декоратора A')
+        print(f'Запускаю {func.__name__}')
+        res = func(*args, **kwargs)
+        print(f'Завершение декоратора A')
+        return res
+    print('Возвращаем декоратор A')
+    return wrapper_a
 
 
-def factorial(n: int) -> int:
-    f = 1
-    for i in range(2, n + 1):
-        f *= i
-    return f
+def deco_b(func: Callable):
+    def wrapper_b(*args, **kwargs):
+        print('Старт декоратора B')
+        print(f'Запускаю {func.__name__}')
+        res = func(*args, **kwargs)
+        print(f'Завершение декоратора B')
+        return res
+    print('Возвращаем декоратор B')
+    return wrapper_b
 
 
-print(f'{factorial(1000) = }')
-control = main(factorial)
-print(f'{control.__name__ = }')
-print(f'{control(1000) = }')
-##################################################################################
-##################################################################################
+def deco_c(func: Callable):
+    def wrapper_c(*args, **kwargs):
+        print('Старт декоратора C')
+        print(f'Запускаю {func.__name__}')
+        res = func(*args, **kwargs)
+        print(f'Завершение декоратора C')
+        return res
+    print('Возвращаем декоратор C')
+    return wrapper_c
+
+
+@deco_c
+@deco_b
+@deco_a
+def main():
+    print('Старт основной функции')
+
+
+main()
 ##################################################################################
 ##################################################################################
 ##################################################################################
