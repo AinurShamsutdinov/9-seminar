@@ -19,6 +19,7 @@ def guess() -> Callable:
                 guess_num = int(input("Enter your guess: "))
             if guess_num == num:
                 print(f'Bingo the number is {num}')
+                break
         if guess_num != num:
             print('Better luck another time')
     return input_num()
