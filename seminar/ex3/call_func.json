@@ -1,0 +1,34 @@
+{
+  "dcd5b8dc-f08d-4459-8a0c-90a2cfbf7c51": {
+    "funcName": "call_func",
+    "args": [
+      200,
+      322
+    ],
+    "return": 64400
+  },
+  "e7b66a37-3c50-44df-a72c-67d3845fddf1": {
+    "funcName": "call_func",
+    "args": [
+      200,
+      322
+    ],
+    "return": 64400
+  },
+  "7ce6db3b-00ce-4f8b-b79d-fc4f068aaef8": {
+    "funcName": "call_func",
+    "args": [
+      200,
+      322
+    ],
+    "return": 64400
+  },
+  "50b36fa6-388d-4dd7-896f-0bf250351dfb": {
+    "funcName": "call_func",
+    "args": [
+      2420,
+      2322
+    ],
+    "return": 5619240
+  }
+}
