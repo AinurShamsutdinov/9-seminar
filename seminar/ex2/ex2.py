@@ -22,7 +22,7 @@ def input_checker(func: Callable):
 
 
 @input_checker
-def guess():
+def console_input():
     num: int = int(input('Enter number between 1 and 100: '))
     tries: int = int(input('Enter amount tries between 1 and 10: '))
     if not 1 <= num <= 100:
@@ -32,4 +32,4 @@ def guess():
     return num, tries
 
 
-guess()
+console_input()
