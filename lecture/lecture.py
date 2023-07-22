@@ -192,14 +192,26 @@ def deco_c(func: Callable):
     return wrapper_c
 
 
+def deco_d(func: Callable):
+    def wrapper_d(*args, **kwargs):
+        print('Старт декоратора D')
+        print(f'Запускаю {func.__name__}')
+        res = func(*args, **kwargs)
+        print(f'Завершение декоратора D')
+        return res
+    print('Возвращаем декоратор D')
+    return wrapper_d
+
+
+@deco_d
 @deco_c
 @deco_b
 @deco_a
-def main():
-    print('Старт основной функции')
+def main(text):
+    print('Старт основной функции ', text)
 
 
-main()
+main('test')
 ##################################################################################
 ##################################################################################
 ##################################################################################
