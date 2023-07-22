@@ -89,26 +89,49 @@
 # print(hello('John'))
 # print(bye('Neo'))
 ##################################################################################
+# from typing import Callable
+#
+#
+# def main(x: int) -> Callable[[int], dict[int, int]]:
+#     d = {}
+#
+#     def loc(y: int) -> dict[int, int]:
+#         for i in range(y):
+#             d[i] = x ** i
+#         return d
+#     return loc
+#
+#
+# small = main(42)
+# big = main(73)
+# print(small(7))
+# print(big(7))
+# print(small(3))
+##################################################################################
+import time
 from typing import Callable
 
 
-def main(x: int) -> Callable[[int], dict[int, int]]:
-    d = {}
+def main(func: Callable):
+    def wrapper(*args, **kwargs):
+        print(f'Запуск функции {func.__name__} в {time.time()}')
+        result = func(*args, **kwargs)
+        print(f'Результат функции {func.__name__}: {result}')
+        print(f'Завершение функции {func.__name__} в return result {time.time()}')
+    return wrapper
 
-    def loc(y: int) -> dict[int, int]:
-        for i in range(y):
-            d[i] = x ** i
-        return d
-    return loc
+
+def factorial(n: int) -> int:
+    f = 1
+    for i in range(2, n + 1):
+        f *= i
+    return f
 
 
-small = main(42)
-big = main(73)
-print(small(7))
-print(big(7))
-print(small(3))
-##################################################################################
-test
+print(f'{factorial(1000) = }')
+control = main(factorial)
+print(f'{control.__name__ = }')
+print(f'{control(1000) = }')
 ##################################################################################
 ##################################################################################
 ##################################################################################
