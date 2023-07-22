@@ -17,7 +17,7 @@ def guess() -> Callable:
         for _ in range(tries):
             if guess_num != num:
                 guess_num = int(input("Enter your guess: "))
-            elif guess_num == num:
+            if guess_num == num:
                 print(f'Bingo the number is {num}')
         if guess_num != num:
             print('Better luck another time')
