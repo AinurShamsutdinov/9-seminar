@@ -4,7 +4,7 @@
 from typing import Callable
 
 
-def decorator(func: Callable):
+def repeat_five_times(func: Callable):
     repeat: int = 5
 
     def wrapper(*args, **kwargs):
@@ -14,7 +14,7 @@ def decorator(func: Callable):
     return wrapper
 
 
-@decorator
+@repeat_five_times
 def test_func(param) -> int:
     print(f'decorated function call with {param = }')
 
