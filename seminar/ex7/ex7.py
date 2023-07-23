@@ -39,7 +39,14 @@ def write_json(func):
         dict_func_data['b'] = args[1]
         dict_func_data['c'] = args[2]
         result = func(*args)
-        dict_func_data['solution'] = result
+        if result is not None:
+            sol_dict = dict()
+            for i, item in enumerate(result):
+                sol_dict[('x_' + str(i + 1))] = item
+            dict_func_data['solution'] = sol_dict
+        else:
+            dict_func_data['solution'] = 'None'
+
         list_results.append(dict_func_data)
         with open(file_name, 'w') as f_rw:
             json.dump(list_results, f_rw, ensure_ascii=False, indent=2)
