@@ -1,0 +1,50 @@
+{
+  "59f9425f-088c-49b5-a41d-005e0dd4494c": {
+    "funcName": "console_input",
+    "args": [
+      3,
+      3
+    ],
+    "return": null
+  },
+  "51c72544-f995-40a2-a49d-de1f40a5d2cd": {
+    "funcName": "console_input",
+    "args": [
+      3,
+      1
+    ],
+    "return": null
+  },
+  "9dc7da89-f8df-4d54-adf0-5a90988aaf2a": {
+    "funcName": "console_input",
+    "args": [
+      1,
+      1
+    ],
+    "return": null
+  },
+  "a26c3930-91a0-4b7b-b40c-abf77bd2ed77": {
+    "funcName": "console_input",
+    "args": [
+      1,
+      1
+    ],
+    "return": null
+  },
+  "a527c689-b4fd-492a-adb0-c3bd1ebf0633": {
+    "funcName": "console_input",
+    "args": [
+      1,
+      1
+    ],
+    "return": null
+  },
+  "35f71fab-d536-4f7c-9274-f3d6c894f39a": {
+    "funcName": "console_input",
+    "args": [
+      1,
+      1
+    ],
+    "return": null
+  }
+}
