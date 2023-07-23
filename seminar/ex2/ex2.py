@@ -8,14 +8,14 @@ from typing import Callable
 
 
 def input_checker(func: Callable):
-    num: int = int(input('Enter number between 1 and 100: '))
-    tries: int = int(input('Enter amount tries between 1 and 10: '))
-    if not 1 <= num <= 100:
-        num: int = random.randint(1, 100)
-    if not 1 <= tries <= 10:
-        tries: int = random.randint(1, 10)
 
     def wrapper():
+        num: int = int(input('Enter number between 1 and 100: '))
+        tries: int = int(input('Enter amount tries between 1 and 10: '))
+        if not 1 <= num <= 100:
+            num: int = random.randint(1, 100)
+        if not 1 <= tries <= 10:
+            tries: int = random.randint(1, 10)
         func(num, tries)
 
     return wrapper

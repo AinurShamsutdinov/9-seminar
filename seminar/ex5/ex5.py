@@ -12,14 +12,15 @@ from typing import Callable
 
 
 def input_checker(func: Callable):
-    num: int = int(input('Enter number between 1 and 100: '))
-    tries: int = int(input('Enter amount tries between 1 and 10: '))
-    if not 1 <= num <= 100:
-        num: int = random.randint(1, 100)
-    if not 1 <= tries <= 10:
-        tries: int = random.randint(1, 10)
-
+    
     def wrapper():
+        num: int = int(input('Enter number between 1 and 100: '))
+        tries: int = int(input('Enter amount tries between 1 and 10: '))
+        if not 1 <= num <= 100:
+            num: int = random.randint(1, 100)
+        if not 1 <= tries <= 10:
+            tries: int = random.randint(1, 10)
+
         func(num, tries)
 
     return wrapper
@@ -61,8 +62,8 @@ def write_json(func: Callable):
     return wrapper
 
 
-def decorator(func: Callable):
-    repeat: int = 5
+def repeat_five_times(func: Callable):
+    repeat: int = 2
 
     def wrapper(*args, **kwargs):
         nonlocal repeat
@@ -71,7 +72,9 @@ def decorator(func: Callable):
     return wrapper
 
 
+@repeat_five_times
 @input_checker
+@write_json
 def console_input(num, tries):
     guess_num = -1
     for _ in range(tries):

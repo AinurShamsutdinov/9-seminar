@@ -1,0 +1,66 @@
+{
+  "5373092f-e977-47a9-ac51-aebb10c8bf3c": {
+    "funcName": "console_input",
+    "args": [
+      1,
+      2
+    ],
+    "return": null
+  },
+  "79c52e8a-46b4-4c1e-a6f8-4d46dc93d9c5": {
+    "funcName": "console_input",
+    "args": [
+      4,
+      2
+    ],
+    "return": null
+  },
+  "4451f962-2029-48d4-af64-a5e2bf886aa2": {
+    "funcName": "console_input",
+    "args": [
+      4,
+      3
+    ],
+    "return": null
+  },
+  "28ba6b11-2253-40c2-8466-73ec03f44996": {
+    "funcName": "console_input",
+    "args": [
+      3,
+      2
+    ],
+    "return": null
+  },
+  "12e82923-f63e-490f-8f88-a8291acbaf49": {
+    "funcName": "console_input",
+    "args": [
+      3,
+      2
+    ],
+    "return": null
+  },
+  "f4647bea-a7ba-4dad-b28a-2f0a83399c8f": {
+    "funcName": "console_input",
+    "args": [
+      4,
+      2
+    ],
+    "return": null
+  },
+  "15f77742-8928-419d-8444-a0527e63d0d4": {
+    "funcName": "console_input",
+    "args": [
+      2,
+      1
+    ],
+    "return": null
+  },
+  "99ba53aa-16e9-4ede-b0e4-850bb93cf317": {
+    "funcName": "console_input",
+    "args": [
+      3,
+      2
+    ],
+    "return": null
+  }
+}
