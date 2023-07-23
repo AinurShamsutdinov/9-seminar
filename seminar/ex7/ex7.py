@@ -7,6 +7,7 @@
 # ○ Декоратор, сохраняющий переданные параметры и результаты работы функции в json файл.
 # 📌 Соберите пакет с играми из тех файлов, что уже были созданы в рамках курса
 import csv
+import json
 import math
 import random
 from functools import wraps
@@ -28,9 +29,20 @@ def solve_equations(func):
 
 
 def write_json(func):
+    list_results = list()
 
     @wraps(func)
     def wrapper(*args):
+        file_name = 'log_' + func.__name__ + '.json'
+        dict_func_data = dict()
+        dict_func_data['a'] = args[0]
+        dict_func_data['b'] = args[1]
+        dict_func_data['c'] = args[2]
+        result = func(*args)
+        dict_func_data['solution'] = result
+        list_results.append(dict_func_data)
+        with open(file_name, 'w') as f_rw:
+            json.dump(list_results, f_rw, ensure_ascii=False, indent=2)
         print('write json ', func.__name__, args)
     return wrapper
 
